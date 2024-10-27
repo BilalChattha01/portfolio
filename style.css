@@ -1,0 +1,120 @@
+/* General body styling */
+body {
+    background-color: #f9f9fb; /* Light background color for readability */
+    font-family: Arial, sans-serif;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+/* Container styling */
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* Header styling */
+header h1 {
+    font-size: 2.8rem;
+    color: #007bff;
+    font-weight: bold;
+    margin-bottom: 0.5em;
+}
+
+header p {
+    font-size: 1.2rem;
+    color: #555;
+}
+
+header a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+header a:hover {
+    color: #0056b3;
+}
+
+/* Section headers */
+h2 {
+    font-size: 2rem;
+    color: #0056b3;
+    border-bottom: 2px solid #007bff;
+    padding-bottom: 8px;
+    margin-bottom: 20px;
+    display: inline-block;
+}
+
+/* Skills list */
+#skills ul.list-group {
+    background-color: #f9f9f9;
+    border: none;
+    padding: 0;
+}
+
+#skills .list-group-item {
+    font-size: 1.1rem;
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    color: #333;
+    padding: 12px 15px;
+    margin-bottom: 5px;
+}
+
+#skills .list-group-item:nth-child(odd) {
+    background-color: #f1f1f1;
+}
+
+/* Portfolio cards */
+#portfolio .card {
+    border: none;
+    background-color: #ffffff;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+#portfolio .card-body {
+    padding: 20px;
+}
+
+#portfolio .card-title {
+    color: #0056b3;
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+}
+
+#portfolio .card-text {
+    color: #555;
+    font-size: 1rem;
+    margin-bottom: 15px;
+}
+
+#portfolio .btn-primary {
+    background-color: #007bff;
+    border: none;
+    transition: background-color 0.3s;
+}
+
+#portfolio .btn-primary:hover {
+    background-color: #0056b3;
+}
+
+/* Media query for mobile responsiveness */
+@media (max-width: 576px) {
+    header h1 {
+        font-size: 2rem;
+    }
+    
+    header p {
+        font-size: 1rem;
+    }
+    
+    h2 {
+        font-size: 1.5rem;
+    }
+    
+    #skills .list-group-item,
+    #portfolio .card-title {
+        font-size: 1rem;
+    }
+}

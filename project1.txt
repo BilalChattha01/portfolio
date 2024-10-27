@@ -1,0 +1,83 @@
+///             object-oriented programming with inheritance, virtual functions, and memory management in C++.  //
+
+
+
+
+#include <iostream>
+#include <cmath>
+
+class Shape {
+public:
+    virtual double area() const = 0;  // Pure virtual function
+    virtual ~Shape() {}               // Virtual destructor
+};
+
+class Circle : public Shape {
+    double radius;
+public:
+    Circle(double r) : radius(r) {}
+    double area() const override {
+        return M_PI * radius * radius;
+    }
+};
+
+class Rectangle : public Shape {
+    double width, height;
+public:
+    Rectangle(double w, double h) : width(w), height(h) {}
+    double area() const override {
+        return width * height;
+    }
+};
+
+class Triangle : public Shape {
+    double base, height;
+public:
+    Triangle(double b, double h) : base(b), height(h) {}
+    double area() const override {
+        return 0.5 * base * height;
+    }
+};
+
+int main() {
+    int choice;
+    std::cout << "Choose a shape to calculate the area:\n";
+    std::cout << "1. Circle\n2. Rectangle\n3. Triangle\n";
+    std::cin >> choice;
+
+    Shape* shape = nullptr;
+
+    switch (choice) {
+        case 1: {
+            double radius;
+            std::cout << "Enter radius: ";
+            std::cin >> radius;
+            shape = new Circle(radius);
+            break;
+        }
+        case 2: {
+            double width, height;
+            std::cout << "Enter width and height: ";
+            std::cin >> width >> height;
+            shape = new Rectangle(width, height);
+            break;
+        }
+        case 3: {
+            double base, height;
+            std::cout << "Enter base and height: ";
+            std::cin >> base >> height;
+            shape = new Triangle(base, height);
+            break;
+        }
+        default:
+            std::cout << "Invalid choice\n";
+            return 1;
+    }
+
+    if (shape) {
+        std::cout << "The area is: " << shape->area() << std::endl;
+        delete shape;  // Clean up dynamically allocated memory
+    }
+
+    return 0;
+}
